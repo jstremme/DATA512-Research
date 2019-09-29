@@ -1,6 +1,6 @@
 # DATA512 A1
 
-This project uses the Pagecounts and Pageviews APIs documented in Step 1 below to query for the number of Wikipedia views in recent years.  This reproducible analysis culminates with a plot of mobile, desktop, and total Wikipedia traffic over the course of these years.
+This project uses the Pagecounts and Pageviews APIs documented in Step 1 below to query for the number of Wikipedia views in recent years.  This reproducible analysis culminates with a plot of mobile, desktop, and total Wikipedia traffic over the course of these years. 
 
 Note that at each step, data is saved to the `data` directory within the repository, while the final `wiki_views.png` resides in the top level directory.  The `data` directory contains 5 API call result JSONS and one CSV file with aggregated page view data.
 
