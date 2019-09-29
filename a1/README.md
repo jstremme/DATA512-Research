@@ -28,4 +28,4 @@ View time series of page views.
 
 **Note**: Because the Pageview API makes it possible to filter for user traffic only, there is a slight discrepency in the counts of hits in the years for which both Pagecount and Pageview results exist.  This impacts the visualization below, as the results from the Pagecount API might include bot and web crawler traffic.  In cases where API results exist for both the Pagecount and Pageview APIs, the Pageview results are displayed.
 
-See the `wiki_views.png` file in the data directory to view the visualization.
+See the `wiki_views.png` file to view the visualization.
