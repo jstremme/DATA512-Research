@@ -1,11 +1,11 @@
 # DATA512 A1
 
-This project uses the Pagecounts and Pageviews APIs documented in Step 1 below to query for the number of Wikipedia views in recent years.  This reproducible analysis culminates with a plot of mobile, desktop, and total Wikipedia traffic over the course of these years. 
+The goal of this project is to use the Pagecounts and Pageviews APIs documented in Step 1 below to query for the number of Wikipedia views in recent years and display them in a plot by following reproducible steps.  The plot displays mobile, desktop, and total Wikipedia traffic over the course of the years queried. 
 
 Note that at each step, data is saved to the `data` directory within the repository, while the final `wiki_views.png` resides in the top level directory.  The `data` directory contains 5 API call result JSONS and one CSV file with aggregated page view data.
 
 # Step 1: Data Aquisition
-- Sample code for accessing the Wikipedia API was made available for re-use under a CC0 license.
+- Sample code for accessing the Wikipedia API was made available for re-use under a CC0 license: https://creativecommons.org/share-your-work/public-domain/cc0/
 - Wikimedia Foundation REST API terms of use: https://www.mediawiki.org/wiki/REST_API#Terms_and_conditions
 - Legacy Pagecounts API: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Legacy_Pagecounts
 - Modern Pageviews API: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
