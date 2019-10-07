@@ -1,0 +1,9 @@
+{
+    "path" : "~/Downloads/country/code",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

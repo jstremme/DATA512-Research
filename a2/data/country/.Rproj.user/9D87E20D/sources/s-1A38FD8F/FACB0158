@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1509173562649.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FACB0158",
+    "lastKnownWriteTime" : 1508558666,
+    "last_content_update" : 1508558666,
+    "path" : "~/Downloads/country/code/utils.R",
+    "project_path" : "code/utils.R",
+    "properties" : {
+        "cursorPosition" : "20,11",
+        "scrollLine" : "16"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Load packages\nlibrary(WikipediR) # Standard Wikipedia API wrapper for some requests\nlibrary(magrittr) # Pipe operator\nlibrary(rlist) # Utilities for reformatting and manipulating lists\n\n# Load other code files\nsource(\"./code/utils.R\")\n\n# Function to grab the initial set of categories from \"Category:People by nationality\"\n# so that we can filter it down to actual per-country categories rather than include\n# meta-categories like \"People by continent and nationality\".\nget_categories <- function(){\n  \n  # Get the raw data and reformat it, returning a vector of category titles\n  categories <- WikipediR::pages_in_category(\"en\", \"wikipedia\",\n                                             categories = \"Politicians by nationality\",\n                                             properties = \"title\", type = \"subcat\",\n                                             limit = 500)$query$categorymembers %>%\n    lapply(rlist::list.extract, \"title\") %>%\n    unlist\n  \n  # Filter it down to only include categories of the format \"[nationality] people\"\n  # and return it\n  return(categories[grepl(x = categories, pattern = \"politicians$\")])\n  \n}\n\n# A function to get all of the subcategories within a category, recursively, to\n# allow for complex structures within \"Category: [X] people\"\nget_subcategories <- function(category, continue_token = NULL){\n  \n  # Clean category name and construct query\n  query_params <- list(action = \"query\",\n                       list = \"categorymembers\",\n                       format = \"json\",\n                       cmtitle = clean_cat(category),\n                       cmprop = \"title\",\n                       cmtype = \"subcat\",\n                       cmlimit = 50)\n  \n  # Handle continuation token\n  if(!is.null(continue_token)){\n    query_params['cmcontinue'] <- continue_token\n  }\n  \n  # Query the API and return\n  return(query_wp(query_params))\n}\n\n# A functiont that, given a category name, provides all pages within that category,\n# allowing us to (finally) retrieve the page titles!\nget_pages <- function(category, continue_token = NULL){\n  \n  # Construct parameters\n  query_params <- list(action = \"query\",\n                       list = \"categorymembers\",\n                       format = \"json\",\n                       cmtitle = clean_cat(category),\n                       cmprop = \"title\",\n                       cmtype = \"page\",\n                       cmlimit = 50)\n  \n  # Handle continuation token\n  if(!is.null(continue_token)){\n    query_params['cmcontinue'] = continue_token\n  }\n  \n  # Make query and return results\n  results <- query_wp(query_params,\n                      \"Pages in categories could not be retrieved\")\n  \n  return(results)\n}",
+    "created" : 1508344091172.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2433769795",
+    "id" : "445A9C57",
+    "lastKnownWriteTime" : 1508347040,
+    "last_content_update" : 1508347040767,
+    "path" : "~/Documents/Code/country/code/retrieve.R",
+    "project_path" : "code/retrieve.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

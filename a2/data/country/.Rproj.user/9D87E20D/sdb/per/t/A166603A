@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Load software libraries\nlibrary(readr)\nlibrary(jsonlite)\n\n# Load code files\nsource(\"./code/retrieve.R\")\n\n# Grab all the top-level categories, clean, and thence get their subcategories!\nmain_categories <- get_categories()\nsubcats <- lapply(main_categories, loop_func, func = get_subcategories)\n\n# Clean up the subcategory data, producing a list of vectors of subcategories\nsubcats <- lapply(subcats, function(x){\n  if(length(x) == 0){\n    return(character())\n  }\n  return(unlist(lapply(x, rlist::list.extract, \"title\")))\n})\n\n# Retrieve the actual pages, producing a data.frame of 2 columns -\n# top-level category and page name\npage_data <- mapply(function(category, subcats){\n  \n  # If there are no subcategories we should not bother querying\n  if(!length(subcats)){\n    return(NULL)\n  }\n  \n  # Get the pages, extract the titles and turn the titles overall into\n  # a vector\n  pages <- lapply(c(subcats, category), loop_func, func = get_pages) %>%\n    unlist(recursive = FALSE) %>%\n    lapply(rlist::list.extract, \"title\") %>%\n    unlist\n  \n  # Construct the data.frame and return it.\n  return(data.frame(country = category,\n                    page = pages,\n                    stringsAsFactors = FALSE))\n}, main_categories, subcats, SIMPLIFY = FALSE, USE.NAMES = FALSE) %>%\n  do.call(\"rbind\", .)\n\n# Clean the categories\npage_data$country <- gsub(x = page_data$country, pattern = \"(Category:| politicians)\",\n                          replacement = \"\")\n\n# And now for the gross and gruesome bit of ~making the demonyms and country names line up~\ndemonym_data <- jsonlite::read_json(\"data/countries.json\")",
+    "created" : 1508346491141.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2917746503",
+    "id" : "A166603A",
+    "lastKnownWriteTime" : 1508379894,
+    "last_content_update" : 1508379894531,
+    "path" : "~/Documents/Code/country/code/main.R",
+    "project_path" : "code/main.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
