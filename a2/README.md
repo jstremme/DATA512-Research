@@ -1,7 +1,7 @@
 # Bias in Data
 
-Name: Joel Stremmel
-Date: 10-10-19
+- Name: Joel Stremmel
+- Date: 10-10-19
 
 ## Goal
 The goal of this project is to analyze the number of articles on politicians for a given country relative to the country's population, as well as the quality of articles.  The analysis also looks at politician article coverage and quality grouped by regions of countries.  There is a brief write-up at the end of the notebook that discusses bias in these articles. Notebook is broken out into the following sections:
