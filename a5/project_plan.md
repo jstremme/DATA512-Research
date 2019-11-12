@@ -3,7 +3,7 @@
 - **Joel Stremmel**
 - **11-11-19**
 
-**Note:** This project plan contains both the text from the original proposal, as well as additions to extend this document into a full project plan.
+**Note:** This project plan contains both the text from the original proposal (a4), as well as additions to extend this document into a full project plan (a5).
 
 # Project Proposal
 
@@ -41,7 +41,7 @@ The problem of identifying establishments likely to fail inspections has been ad
 
 Blogposts have covered the work done by the city of Chicago in the GitHub repository linked above to analyze risk of foodborne illness for specific food establishments.  This blogpost details the way in which inspectors visit high-risk establishments more often than low-risk ones, following the use of the model developed by the city: http://redlineproject.org/foodinspections.php.  This blogpost has informed my thinking about the problem at hand.
 
-Though I found this dataset on healthdata.gov, some Chicago food inspection data has been made available on Kaggle with limited engagement from Kagglers: https://www.kaggle.com/chicago/chicago-food-inspections.  If I examine or use anything from the kernels published here, I will reference them in my final report.
+Though I found this dataset on HealthData.gov, some Chicago food inspection data has been made available on Kaggle with limited engagement from Kagglers: https://www.kaggle.com/chicago/chicago-food-inspections.  If I examine or use anything from the kernels published here, I will reference them in my final report.
 
 GitHub user trupti-jadhav has also analyzed this data here: https://github.com/trupti-jadhav/Food-Inspection-in-City-of-Chicago-Python/blob/master/FOOD_INSPECTION_FINAL.ipynb.  I will reference his analysis if I examine it in detail or use anything from his report.
 
@@ -50,7 +50,7 @@ To address the questions and hypothesis posed for this research, I will use a nu
 
 To prepare the data for analysis I will:  
 
-- Download the food inspections data CSV from the healthdata.gov website
+- Download the food inspections data CSV from the HealthData.gov website
 - Rename columns as appropriate and drop columns not relevant to my analysis
 - Examine and display the prevalence of categorical features such as food establishment type
 - Drop rare categorical features and document my criteria for dropping these features
@@ -63,7 +63,7 @@ In phase 1 I will:
 
 - Generate summary statistics about the features in the feature matrix such as means and spread statistics like standard deviation, min, and max.
 - Split the data into train, validation, and test sets.
-- Apply a Lasso logistic regression model to predict liklihood of failing a food inspection using the available categorical and continuous features to examine which features explain a large percentage of variation and are statistically significant in the presence of other features.
+- Apply a Lasso Logistic Regression model to predict liklihood of failing a food inspection using the available categorical and continuous features to examine which features explain a large percentage of variation and are statistically significant in the presence of other features.
 - Apply other ML models such as K-Nearest-Neighbors and tree-based models such as Random Forest to model nonlinear relationships in the data and compare classification accuracy between approaches.
 - I will examine a variety of classification metrics such as precision and recall in addition to raw accuracy to provide a sense for how a classification model could be valuable in practice.
 
@@ -75,6 +75,67 @@ In phase 2 I will:
 - Apply addition models to evaluate classification accuracy with these additional features to compare to phase 1.
 - Generate relevant plots to explain predictor variables and their relationship to the target variable.
 
-As I conduct this analysis, I may find it useful to compare statistics for failing and passing inspections using traditional inferential methods such as the two sample t test to assess whether or not there is a significant difference in the rates of binary predictors or means of continous predictors between failing and passing food establishments.
+As I conduct this analysis, I may find it useful to compare statistics for failing and passing inspections using traditional inferential methods such as the Two Sample T Test to assess whether or not there is a significant difference in the rates of binary predictors or means of continous predictors between failing and passing food establishments.  Similarly, it may become apparent that unsupervised methods such as K Means would be useful for grouping types of food establishments.  I will apply these methods as appropriate, but will start with the methods outlined in phase 1 and 2 to adhere to my project plan.
 
 To present my analysis I will provide a detailed Jupyter Notebook including instructive visualizations and tables.  If I am able to store code in other files and generate a single notebook of plots and tables, I will present my final analysis in this notebook.  Otherwise, I will extract images, tables, and summary statistics from my notebooks to create a final Powerpoint presentation to share my analysis.
+
+### Data Sample:
+To provide an understanding of the data elements in the Chicago Food Inspections data:
+
+- Data Source: https://healthdata.gov/dataset/food-inspections
+- License: http://opendefinition.org/licenses/odc-odbl/
+
+I include the following first 5 rows of the dataset with headers, as well as a brief frequency analysis of important fields.  
+
+| Inspection ID | DBA Name             | AKA Name             | License # | Facility Type        | Risk            | Address              | City    | State | Zip     | Inspection Date | Inspection Type       | Results         | Violations                                                                                                                                                                                                                              | Latitude           | Longitude    | Location                                 |
+|---------------|----------------------|----------------------|-----------|----------------------|-----------------|----------------------|---------|-------|---------|-----------------|-----------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|--------------|------------------------------------------|
+| 2320831       | OGDEN PLAZA INC.     | OGDEN PLAZA INC.     | 2475982.0 | Grocery Store        | Risk 3 (Low)    | 3459 W OGDEN AVE     | CHICAGO | IL    | 60623.0 | 10/31/19        | Canvass               | Out of Business |                                                                                                                                                                                                                                         | 41.85526591        | -87.71240156 | (-87.71240156240032, 41.85526590922669)  |
+| 2320793       | TACO MARIO'S LIMITED | TACO MARIO'S LIMITED | 2622418.0 | Mobile Food Preparer | Risk 2 (Medium) | 2300 S THROOP ST     | CHICAGO | IL    | 60608.0 | 10/30/19        | License               | Pass            |                                                                                                                                                                                                                                         | 41.85045102        | -87.65879786 | (-87.65879785567869, 41.85045102427)     |
+| 2320830       | THE HOXTON, CHICAGO  | THE HOXTON, CHICAGO  | 2694640.0 | Restaurant           | Risk 2 (Medium) | 200 N GREEN ST       | CHICAGO | IL    | 60607.0 | 10/31/19        | License               | Pass            | 36. THERMOMETERS PROVIDED & ACCURATE - Comments: MUST PROVIDE THERMOMETERS IN ALL REFRIGERATION UNITS AND MAINTAIN.                                                                                                                     | 41.885699200000005 | -87.64878909 | (-87.64878908937915, 41.885699197163355) |
+| 2320717       | ROCKS LAKEVIEW       | ROCKS LAKEVIEW       | 2304161.0 | Restaurant           | Risk 1 (High)   | 3463-3467 N BROADWAY | CHICAGO | IL    | 60657.0 | 10/29/19        | Canvass Re-Inspection | Pass            | 47. FOOD & NON-FOOD CONTACT SURFACES CLEANABLE, PROPERLY DESIGNED, CONSTRUCTED & USED - Comments: NOTED TORN RUBBER GASKET INSIDE THE PREP SERVICE COOLER AT THE KITCHEN PREP. INSTRUCTED TO DETAIL REPAIR AND MAINTAIN AND/OR REPLACE. | 41.94497417        | -87.64565976 | (-87.64565975587642, 41.94497417145062)  |
+| 2320618       | A BEAUTIFUL RIND     | A BEAUTIFUL RIND     | 2670347.0 |                      | Risk 1 (High)   | 2211 N MILWAUKEE AVE | CHICAGO | IL    | 60647.0 | 10/28/19        | License               | Not Ready       |                                                                                                                                                                                                                                         | 41.92107616        | -87.69413786 | (-87.69413785909323, 41.921076157561416) |
+
+Here are the most common food establishments in the data:
+
+| index | facility_type                   | count  | prevalence |
+|-------|---------------------------------|--------|------------|
+| 0     | Restaurant                      | 129938 | 0.667430   |
+| 1     | Grocery Store                   | 24829  | 0.127535   |
+| 2     | School                          | 12062  | 0.061957   |
+| 3     | Children's Services Facility    | 3031   | 0.015569   |
+| 4     | Bakery                          | 2837   | 0.014572   |
+| 5     | Daycare (2 - 6 Years)           | 2682   | 0.013776   |
+| 6     | Daycare Above and Under 2 Years | 2355   | 0.012097   |
+| 7     | Long Term Care                  | 1340   | 0.006883   |
+| 8     | Catering                        | 1190   | 0.006112   |
+| 9     | Liquor                          | 847    | 0.004351   |
+
+And the most common Chicago zip codes represented:
+
+| index | zip     | count | prevalence |
+|-------|---------|-------|------------|
+| 0     | 60614.0 | 7284  | 0.037414   |
+| 1     | 60647.0 | 7088  | 0.036408   |
+| 2     | 60657.0 | 6824  | 0.035052   |
+| 3     | 60622.0 | 6108  | 0.031374   |
+| 4     | 60611.0 | 6094  | 0.031302   |
+| 5     | 60608.0 | 5925  | 0.030434   |
+| 6     | 60618.0 | 5923  | 0.030424   |
+| 7     | 60625.0 | 5387  | 0.027670   |
+| 8     | 60639.0 | 5208  | 0.026751   |
+| 9     | 60607.0 | 5145  | 0.026427   |
+
+Certain types of inspections might also result in failures at higher rates than others.  Here are the most common inspection types:
+
+| index | inspection_type          | count  | prevalence |
+|-------|--------------------------|--------|------------|
+| 0     | Canvass                  | 102944 | 0.528775   |
+| 1     | License                  | 25614  | 0.131567   |
+| 2     | Canvass Re-Inspection    | 20457  | 0.105078   |
+| 3     | Complaint                | 18093  | 0.092935   |
+| 4     | License Re-Inspection    | 8899   | 0.045710   |
+| 5     | Complaint Re-Inspection  | 7499   | 0.038519   |
+| 6     | Short Form Complaint     | 6717   | 0.034502   |
+| 7     | Suspected Food Poisoning | 850    | 0.004366   |
+| 8     | Consultation             | 669    | 0.003436   |
+| 9     | License-Task Force       | 604    | 0.003102   |

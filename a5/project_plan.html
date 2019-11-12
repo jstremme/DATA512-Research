@@ -131,7 +131,7 @@ $(document).ready(function () {
 <li><strong>Joel Stremmel</strong></li>
 <li><strong>11-11-19</strong></li>
 </ul>
-<p><strong>Note:</strong> This project plan contains both the text from the original proposal, as well as additions to extend this document into a full project plan.</p>
+<p><strong>Note:</strong> This project plan contains both the text from the original proposal (a4), as well as additions to extend this document into a full project plan (a5).</p>
 </div>
 <div id="project-proposal" class="section level1">
 <h1>Project Proposal</h1>
@@ -172,7 +172,7 @@ $(document).ready(function () {
 <h3>Background and Related Work:</h3>
 <p>The problem of identifying establishments likely to fail inspections has been addressed in part by the city of Chicago, using the data they have collected and made available. Their approach focuses primarily on predicting establishments likely to fail inspections as a way of triaging which establishments need attention. Their research is located here: <a href="https://github.com/Chicago/food-inspections-evaluation" class="uri">https://github.com/Chicago/food-inspections-evaluation</a>.</p>
 <p>Blogposts have covered the work done by the city of Chicago in the GitHub repository linked above to analyze risk of foodborne illness for specific food establishments. This blogpost details the way in which inspectors visit high-risk establishments more often than low-risk ones, following the use of the model developed by the city: <a href="http://redlineproject.org/foodinspections.php" class="uri">http://redlineproject.org/foodinspections.php</a>. This blogpost has informed my thinking about the problem at hand.</p>
-<p>Though I found this dataset on healthdata.gov, some Chicago food inspection data has been made available on Kaggle with limited engagement from Kagglers: <a href="https://www.kaggle.com/chicago/chicago-food-inspections" class="uri">https://www.kaggle.com/chicago/chicago-food-inspections</a>. If I examine or use anything from the kernels published here, I will reference them in my final report.</p>
+<p>Though I found this dataset on HealthData.gov, some Chicago food inspection data has been made available on Kaggle with limited engagement from Kagglers: <a href="https://www.kaggle.com/chicago/chicago-food-inspections" class="uri">https://www.kaggle.com/chicago/chicago-food-inspections</a>. If I examine or use anything from the kernels published here, I will reference them in my final report.</p>
 <p>GitHub user trupti-jadhav has also analyzed this data here: <a href="https://github.com/trupti-jadhav/Food-Inspection-in-City-of-Chicago-Python/blob/master/FOOD_INSPECTION_FINAL.ipynb" class="uri">https://github.com/trupti-jadhav/Food-Inspection-in-City-of-Chicago-Python/blob/master/FOOD_INSPECTION_FINAL.ipynb</a>. I will reference his analysis if I examine it in detail or use anything from his report.</p>
 </div>
 <div id="methodology" class="section level3">
@@ -180,7 +180,7 @@ $(document).ready(function () {
 <p>To address the questions and hypothesis posed for this research, I will use a number of methods.</p>
 <p>To prepare the data for analysis I will:</p>
 <ul>
-<li>Download the food inspections data CSV from the healthdata.gov website</li>
+<li>Download the food inspections data CSV from the HealthData.gov website</li>
 <li>Rename columns as appropriate and drop columns not relevant to my analysis</li>
 <li>Examine and display the prevalence of categorical features such as food establishment type</li>
 <li>Drop rare categorical features and document my criteria for dropping these features</li>
@@ -192,7 +192,7 @@ $(document).ready(function () {
 <ul>
 <li>Generate summary statistics about the features in the feature matrix such as means and spread statistics like standard deviation, min, and max.</li>
 <li>Split the data into train, validation, and test sets.</li>
-<li>Apply a Lasso logistic regression model to predict liklihood of failing a food inspection using the available categorical and continuous features to examine which features explain a large percentage of variation and are statistically significant in the presence of other features.</li>
+<li>Apply a Lasso Logistic Regression model to predict liklihood of failing a food inspection using the available categorical and continuous features to examine which features explain a large percentage of variation and are statistically significant in the presence of other features.</li>
 <li>Apply other ML models such as K-Nearest-Neighbors and tree-based models such as Random Forest to model nonlinear relationships in the data and compare classification accuracy between approaches.</li>
 <li>I will examine a variety of classification metrics such as precision and recall in addition to raw accuracy to provide a sense for how a classification model could be valuable in practice.</li>
 </ul>
@@ -204,8 +204,375 @@ $(document).ready(function () {
 <li>Apply addition models to evaluate classification accuracy with these additional features to compare to phase 1.</li>
 <li>Generate relevant plots to explain predictor variables and their relationship to the target variable.</li>
 </ul>
-<p>As I conduct this analysis, I may find it useful to compare statistics for failing and passing inspections using traditional inferential methods such as the two sample t test to assess whether or not there is a significant difference in the rates of binary predictors or means of continous predictors between failing and passing food establishments.</p>
+<p>As I conduct this analysis, I may find it useful to compare statistics for failing and passing inspections using traditional inferential methods such as the Two Sample T Test to assess whether or not there is a significant difference in the rates of binary predictors or means of continous predictors between failing and passing food establishments. Similarly, it may become apparent that unsupervised methods such as K Means would be useful for grouping types of food establishments. I will apply these methods as appropriate, but will start with the methods outlined in phase 1 and 2 to adhere to my project plan.</p>
 <p>To present my analysis I will provide a detailed Jupyter Notebook including instructive visualizations and tables. If I am able to store code in other files and generate a single notebook of plots and tables, I will present my final analysis in this notebook. Otherwise, I will extract images, tables, and summary statistics from my notebooks to create a final Powerpoint presentation to share my analysis.</p>
+</div>
+<div id="data-sample" class="section level3">
+<h3>Data Sample:</h3>
+<p>To provide an understanding of the data elements in the Chicago Food Inspections data:</p>
+<ul>
+<li>Data Source: <a href="https://healthdata.gov/dataset/food-inspections" class="uri">https://healthdata.gov/dataset/food-inspections</a></li>
+<li>License: <a href="http://opendefinition.org/licenses/odc-odbl/" class="uri">http://opendefinition.org/licenses/odc-odbl/</a></li>
+</ul>
+<p>I include the following first 5 rows of the dataset with headers, as well as a brief frequency analysis of important fields.</p>
+<table>
+<colgroup>
+<col width="2%"></col>
+<col width="4%"></col>
+<col width="4%"></col>
+<col width="2%"></col>
+<col width="4%"></col>
+<col width="3%"></col>
+<col width="4%"></col>
+<col width="1%"></col>
+<col width="1%"></col>
+<col width="1%"></col>
+<col width="3%"></col>
+<col width="4%"></col>
+<col width="3%"></col>
+<col width="43%"></col>
+<col width="3%"></col>
+<col width="2%"></col>
+<col width="7%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Inspection ID</th>
+<th>DBA Name</th>
+<th>AKA Name</th>
+<th>License #</th>
+<th>Facility Type</th>
+<th>Risk</th>
+<th>Address</th>
+<th>City</th>
+<th>State</th>
+<th>Zip</th>
+<th>Inspection Date</th>
+<th>Inspection Type</th>
+<th>Results</th>
+<th>Violations</th>
+<th>Latitude</th>
+<th>Longitude</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2320831</td>
+<td>OGDEN PLAZA INC.</td>
+<td>OGDEN PLAZA INC.</td>
+<td>2475982.0</td>
+<td>Grocery Store</td>
+<td>Risk 3 (Low)</td>
+<td>3459 W OGDEN AVE</td>
+<td>CHICAGO</td>
+<td>IL</td>
+<td>60623.0</td>
+<td>10/31/19</td>
+<td>Canvass</td>
+<td>Out of Business</td>
+<td></td>
+<td>41.85526591</td>
+<td>-87.71240156</td>
+<td>(-87.71240156240032, 41.85526590922669)</td>
+</tr>
+<tr class="even">
+<td>2320793</td>
+<td>TACO MARIO’S LIMITED</td>
+<td>TACO MARIO’S LIMITED</td>
+<td>2622418.0</td>
+<td>Mobile Food Preparer</td>
+<td>Risk 2 (Medium)</td>
+<td>2300 S THROOP ST</td>
+<td>CHICAGO</td>
+<td>IL</td>
+<td>60608.0</td>
+<td>10/30/19</td>
+<td>License</td>
+<td>Pass</td>
+<td></td>
+<td>41.85045102</td>
+<td>-87.65879786</td>
+<td>(-87.65879785567869, 41.85045102427)</td>
+</tr>
+<tr class="odd">
+<td>2320830</td>
+<td>THE HOXTON, CHICAGO</td>
+<td>THE HOXTON, CHICAGO</td>
+<td>2694640.0</td>
+<td>Restaurant</td>
+<td>Risk 2 (Medium)</td>
+<td>200 N GREEN ST</td>
+<td>CHICAGO</td>
+<td>IL</td>
+<td>60607.0</td>
+<td>10/31/19</td>
+<td>License</td>
+<td>Pass</td>
+<td>36. THERMOMETERS PROVIDED &amp; ACCURATE - Comments: MUST PROVIDE THERMOMETERS IN ALL REFRIGERATION UNITS AND MAINTAIN.</td>
+<td>41.885699200000005</td>
+<td>-87.64878909</td>
+<td>(-87.64878908937915, 41.885699197163355)</td>
+</tr>
+<tr class="even">
+<td>2320717</td>
+<td>ROCKS LAKEVIEW</td>
+<td>ROCKS LAKEVIEW</td>
+<td>2304161.0</td>
+<td>Restaurant</td>
+<td>Risk 1 (High)</td>
+<td>3463-3467 N BROADWAY</td>
+<td>CHICAGO</td>
+<td>IL</td>
+<td>60657.0</td>
+<td>10/29/19</td>
+<td>Canvass Re-Inspection</td>
+<td>Pass</td>
+<td>47. FOOD &amp; NON-FOOD CONTACT SURFACES CLEANABLE, PROPERLY DESIGNED, CONSTRUCTED &amp; USED - Comments: NOTED TORN RUBBER GASKET INSIDE THE PREP SERVICE COOLER AT THE KITCHEN PREP. INSTRUCTED TO DETAIL REPAIR AND MAINTAIN AND/OR REPLACE.</td>
+<td>41.94497417</td>
+<td>-87.64565976</td>
+<td>(-87.64565975587642, 41.94497417145062)</td>
+</tr>
+<tr class="odd">
+<td>2320618</td>
+<td>A BEAUTIFUL RIND</td>
+<td>A BEAUTIFUL RIND</td>
+<td>2670347.0</td>
+<td></td>
+<td>Risk 1 (High)</td>
+<td>2211 N MILWAUKEE AVE</td>
+<td>CHICAGO</td>
+<td>IL</td>
+<td>60647.0</td>
+<td>10/28/19</td>
+<td>License</td>
+<td>Not Ready</td>
+<td></td>
+<td>41.92107616</td>
+<td>-87.69413786</td>
+<td>(-87.69413785909323, 41.921076157561416)</td>
+</tr>
+</tbody>
+</table>
+<p>Here are the most common food establishments in the data:</p>
+<table>
+<thead>
+<tr class="header">
+<th>index</th>
+<th>facility_type</th>
+<th>count</th>
+<th>prevalence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Restaurant</td>
+<td>129938</td>
+<td>0.667430</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Grocery Store</td>
+<td>24829</td>
+<td>0.127535</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>School</td>
+<td>12062</td>
+<td>0.061957</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Children’s Services Facility</td>
+<td>3031</td>
+<td>0.015569</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Bakery</td>
+<td>2837</td>
+<td>0.014572</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Daycare (2 - 6 Years)</td>
+<td>2682</td>
+<td>0.013776</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Daycare Above and Under 2 Years</td>
+<td>2355</td>
+<td>0.012097</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>Long Term Care</td>
+<td>1340</td>
+<td>0.006883</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Catering</td>
+<td>1190</td>
+<td>0.006112</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Liquor</td>
+<td>847</td>
+<td>0.004351</td>
+</tr>
+</tbody>
+</table>
+<p>And the most common Chicago zip codes represented:</p>
+<table>
+<thead>
+<tr class="header">
+<th>index</th>
+<th>zip</th>
+<th>count</th>
+<th>prevalence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>60614.0</td>
+<td>7284</td>
+<td>0.037414</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>60647.0</td>
+<td>7088</td>
+<td>0.036408</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>60657.0</td>
+<td>6824</td>
+<td>0.035052</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>60622.0</td>
+<td>6108</td>
+<td>0.031374</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>60611.0</td>
+<td>6094</td>
+<td>0.031302</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>60608.0</td>
+<td>5925</td>
+<td>0.030434</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>60618.0</td>
+<td>5923</td>
+<td>0.030424</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>60625.0</td>
+<td>5387</td>
+<td>0.027670</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>60639.0</td>
+<td>5208</td>
+<td>0.026751</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>60607.0</td>
+<td>5145</td>
+<td>0.026427</td>
+</tr>
+</tbody>
+</table>
+<p>Certain types of inspections might also result in failures at higher rates than others. Here are the most common inspection types:</p>
+<table>
+<thead>
+<tr class="header">
+<th>index</th>
+<th>inspection_type</th>
+<th>count</th>
+<th>prevalence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Canvass</td>
+<td>102944</td>
+<td>0.528775</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>License</td>
+<td>25614</td>
+<td>0.131567</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Canvass Re-Inspection</td>
+<td>20457</td>
+<td>0.105078</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Complaint</td>
+<td>18093</td>
+<td>0.092935</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>License Re-Inspection</td>
+<td>8899</td>
+<td>0.045710</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Complaint Re-Inspection</td>
+<td>7499</td>
+<td>0.038519</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Short Form Complaint</td>
+<td>6717</td>
+<td>0.034502</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>Suspected Food Poisoning</td>
+<td>850</td>
+<td>0.004366</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Consultation</td>
+<td>669</td>
+<td>0.003436</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>License-Task Force</td>
+<td>604</td>
+<td>0.003102</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
