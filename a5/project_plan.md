@@ -27,7 +27,6 @@ This research aims to address two questions and test the assumptions of one hypo
 Questions:
 
 - Which types of food establishments (i.e. restaurants, bars, cafes, school cafeterias) are most likely to fail food inspections in the city of Chicago?
-
 - Which neighborhoods in Chicago are most likely to fail food inspections?
 
 Hypothesis:
@@ -35,6 +34,8 @@ Hypothesis:
 - The neighborhoods in Chicago most likely to fail food inspections are also relatively impoverished compared to those likely to pass inspections.
 
 These research questions are aimed at building an understanding of factors that may contribute to establishments failing an inspection, while the hypothesis represents an assumption on my part as the researcher.   I am interested in addressing this assumption to better understand whether or not geographical features are predictive precisely because they stand in for economic features missing from the dataset, or if, perhaps, there are other factors that drive inspection failure rates.  It might also be the case that failures occur uniformly across neighborhoods.
+
+As discussed in the project proposal, these questions are of interest to me but also relevant to restaurant owners, customers, and the city of Chicago in general.  Restuarant owners may be interested in which types of establishments represent higher risk investments compared to others, based on propensity to fail a food inspections.  Customers may be interested in which neighborhoods have restaurants that fail inspections at higher rates than other neighborhoods and whether or not this is merely due to economic factors.  While the city has implemented a model to pinpoint establishments at high-risk of failing spections, an analysis of the features associated with failures and potential economic bias associated with the liklihood of failure will provide additional information and context.  Citizens of other cities may also be intrested in the reproducible methods applied in this analysis to see how these methods could be applied to food inspection data for their cities.
 
 ### Background and Related Work:
 The problem of identifying establishments likely to fail inspections has been addressed in part by the city of Chicago, using the data they have collected and made available.  Their approach focuses primarily on predicting establishments likely to fail inspections as a way of triaging which establishments need attention.  Their research is located here: https://github.com/Chicago/food-inspections-evaluation.
