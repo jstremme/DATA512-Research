@@ -181,12 +181,12 @@ $(document).ready(function () {
 <p>To address the questions and hypothesis posed for this research, I will use a number of methods.</p>
 <p>To prepare the data for analysis I will:</p>
 <ul>
-<li>Download the food inspections data CSV from the HealthData.gov website</li>
-<li>Rename columns as appropriate and drop columns not relevant to my analysis</li>
-<li>Examine and display the prevalence of categorical features such as food establishment type</li>
-<li>Drop rare categorical features and document my criteria for dropping these features</li>
-<li>Create a matrix of continuous and one hot encoded categorical features to analyze</li>
-<li>Transform features appropriately before modeling, i.e. standard scaling inputs</li>
+<li>Download the food inspections data CSV from the HealthData.gov website.</li>
+<li>Rename columns as appropriate and drop columns not relevant to my analysis.</li>
+<li>Examine and display the prevalence of categorical features such as food establishment type.</li>
+<li>Drop rare categorical features and document my criteria for dropping these features.</li>
+<li>Create a matrix of continuous and one hot encoded categorical features to analyze.</li>
+<li>Transform features appropriately before modeling, i.e. standard scaling inputs.</li>
 </ul>
 <p>To address my questions and hypothesis I will apply methods in two phases.</p>
 <p>In phase 1 I will:</p>
@@ -194,13 +194,13 @@ $(document).ready(function () {
 <li>Generate summary statistics about the features in the feature matrix such as means and spread statistics like standard deviation, min, and max.</li>
 <li>Split the data into train, validation, and test sets.</li>
 <li>Apply a Lasso Logistic Regression model to predict liklihood of failing a food inspection using the available categorical and continuous features to examine which features explain a large percentage of variation and are statistically significant in the presence of other features.</li>
-<li>Apply other ML models such as K-Nearest-Neighbors and tree-based models such as Random Forest to model nonlinear relationships in the data and compare classification accuracy between approaches.</li>
+<li>Apply other ML models such as K-Nearest-Neighbors and tree-based models such as Random Forest to model non-linear relationships in the data and compare classification accuracy between approaches.</li>
 <li>I will examine a variety of classification metrics such as precision and recall in addition to raw accuracy to provide a sense for how a classification model could be valuable in practice.</li>
 </ul>
 <p>In phase 2 I will:</p>
 <ul>
-<li>Join zip level data with economic statistics about zip regions</li>
-<li>Examine correlation between failure rates and poverty levels across zip regions</li>
+<li>Join zip level data with economic statistics about zip regions.</li>
+<li>Examine correlation between failure rates and poverty levels across zip regions.</li>
 <li>Include economic statistics in the Lasso model to see if, when controlling for economic factors, the geographic features are as important in the regression model as in phase 1.</li>
 <li>Apply addition models to evaluate classification accuracy with these additional features to compare to phase 1.</li>
 <li>Generate relevant plots to explain predictor variables and their relationship to the target variable.</li>

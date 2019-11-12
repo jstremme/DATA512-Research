@@ -51,12 +51,12 @@ To address the questions and hypothesis posed for this research, I will use a nu
 
 To prepare the data for analysis I will:  
 
-- Download the food inspections data CSV from the HealthData.gov website
-- Rename columns as appropriate and drop columns not relevant to my analysis
-- Examine and display the prevalence of categorical features such as food establishment type
-- Drop rare categorical features and document my criteria for dropping these features
-- Create a matrix of continuous and one hot encoded categorical features to analyze
-- Transform features appropriately before modeling, i.e. standard scaling inputs
+- Download the food inspections data CSV from the HealthData.gov website.
+- Rename columns as appropriate and drop columns not relevant to my analysis.
+- Examine and display the prevalence of categorical features such as food establishment type.
+- Drop rare categorical features and document my criteria for dropping these features.
+- Create a matrix of continuous and one hot encoded categorical features to analyze.
+- Transform features appropriately before modeling, i.e. standard scaling inputs.
 
 To address my questions and hypothesis I will apply methods in two phases.  
 
@@ -65,13 +65,13 @@ In phase 1 I will:
 - Generate summary statistics about the features in the feature matrix such as means and spread statistics like standard deviation, min, and max.
 - Split the data into train, validation, and test sets.
 - Apply a Lasso Logistic Regression model to predict liklihood of failing a food inspection using the available categorical and continuous features to examine which features explain a large percentage of variation and are statistically significant in the presence of other features.
-- Apply other ML models such as K-Nearest-Neighbors and tree-based models such as Random Forest to model nonlinear relationships in the data and compare classification accuracy between approaches.
+- Apply other ML models such as K-Nearest-Neighbors and tree-based models such as Random Forest to model non-linear relationships in the data and compare classification accuracy between approaches.
 - I will examine a variety of classification metrics such as precision and recall in addition to raw accuracy to provide a sense for how a classification model could be valuable in practice.
 
 In phase 2 I will:
 
-- Join zip level data with economic statistics about zip regions
-- Examine correlation between failure rates and poverty levels across zip regions
+- Join zip level data with economic statistics about zip regions.
+- Examine correlation between failure rates and poverty levels across zip regions.
 - Include economic statistics in the Lasso model to see if, when controlling for economic factors, the geographic features are as important in the regression model as in phase 1.
 - Apply addition models to evaluate classification accuracy with these additional features to compare to phase 1.
 - Generate relevant plots to explain predictor variables and their relationship to the target variable.
