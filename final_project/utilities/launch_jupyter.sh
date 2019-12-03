@@ -7,11 +7,3 @@ echo $PYTHONPATH
 echo $PYSPARK_DRIVER_PYTHON
 echo $PYSPARK_DRIVER_PYTHON_OPTS
 pyspark
-
-
-
-
-
-
-
-
