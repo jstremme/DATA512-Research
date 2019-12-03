@@ -1,7 +1,7 @@
 # Update package manager
 sudo yum update
 
-# Install Anaconda
+# Install Anaconda - you may need to close and reopen your shell after this
 wget https://repo.continuum.io/archive/Anaconda3-2019.10-Linux-x86_64.sh
 sh Anaconda3-2019.10-Linux-x86_64.sh
 
