@@ -9,19 +9,12 @@ python -m ipykernel install --user --name py368 --display-name "Python 3.6.8"
 
 
 
-
-unset PYTHONPAT
+unset PYTHONPATH
 pip uninstall -y enum34
-
-
-
-sudo yum install git
-git clone https://github.com/jstremme/DATA512-Research.git
 
 
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_PYTHON=/home/hadoop/anaconda3
-
 
 
 import os
