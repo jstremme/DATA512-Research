@@ -42,6 +42,15 @@ The following Python packages were used:
 
 Chicago Food Inspections data from HealthData.gov: https://healthdata.gov/dataset/food-inspections.  At the time of writing, it has 194,684 records of food inspections, and represents food inspections in the city of Chicago going back to 2010 as individual records.  Each record contains a facility type, name, address, date, zip code, longitude, latitude, risk status of the business, and inspection result, in addition to specific violations.  The dataset is licensed under the ODbL (Open Database License): http://opendefinition.org/licenses/odc-odbl/.  Of particular note, the dataset provides detailed location information that allowing me to identify geographic patterns associated with passing or failing food inspections in the city of Chicago, and link to additional information about city neighborhoods to assess correlations with economic status.  While this dataset has been made freely available by the city of Chicago, one ethical consideration is that the names of restaurants are made public in this dataset.  That said, it is precisely for public health reasons that this information is made public, so I do not remove these identifiers from my analysis.  That said, I do not call attention to or disparage specific establishments over others, instead focusing on group trends and considering assumptions and possible confounding effects when summarizing my findings.
 
+To address the potential confounding effects of economic status, I include median household income by zip code using the American Community Five Year Survey which I access through the US Census Data API.  See details on these data resources here:
+
+- US Census Data API Terms of Service: https://www.census.gov/data/developers/about/terms-of-service.html
+- API Key Signup: https://api.census.gov/data/key_signup.html
+- API User Guide: https://www.census.gov/data/developers/guidance/api-user-guide.html
+- American Community and Five Year Survey: https://www.census.gov/data/developers/data-sets/acs-5year.html
+- American Community and Five Year Survey Variables: https://api.census.gov/data/2017/acs/acs5/variables.html
+- Blogpost I Read to Help with Setup: https://towardsdatascience.com/getting-census-data-in-5-easy-steps-a08eeb63995d
+
 **Disclaimers**
 - As required by census.gov: "This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau."
 - The `data` directory includes data licensed under the [odbl license](http://opendefinition.org/licenses/odc-odbl/) and that license is reproduced in `LICENSE.txt` in accordance with the requirements of the odbl license.
@@ -58,9 +67,11 @@ Chicago Food Inspections data from HealthData.gov: https://healthdata.gov/datase
 
 ### Summary Plots and Visualizations
 
-To address my first question, I plotted the inspection failure rates by facilitiy type ![plot1](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_facility_type.png)
+To address my first question, I plotted the inspection failure rates by facilitiy type. ![plot1](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_facility_type.png)
 
 I also inspected failure rates by zip code, as my aim is to understand neighborhoods most likely to fail inspections.  I explore zip codes as features in a linear model for predicting failures to measure the effect of belonging to a given zip when controling for other features in the dataset. ![plot2](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_zip.png)
+
+Using the 
 
 ### Models
 
