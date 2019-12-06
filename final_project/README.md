@@ -67,11 +67,11 @@ To address the potential confounding effects of economic status, I include media
 
 ### Summary Plots and Visualizations
 
-To address my first question, I plotted the inspection failure rates by facilitiy type. ![plot1](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_facility_type.png)
+To address my first question, I plot the inspection failure rates by facilitiy type. ![plot1](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_facility_type.png)
 
-I also inspected failure rates by zip code, as my aim is to understand neighborhoods most likely to fail inspections.  I explore zip codes as features in a linear model for predicting failures to measure the effect of belonging to a given zip when controling for other features in the dataset. ![plot2](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_zip.png)
+I also inspect failure rates by zip code, as my aim is to understand neighborhoods most likely to fail inspections.  I explore zip codes as features in a linear model for predicting failures to measure the effect of belonging to a given zip when controling for other features in the dataset. ![plot2](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_zip.png)
 
-Using the 
+Using the US Census API, I collect median household income for each zip code in the data.  Here I show the failure rate for food inspections by median household income group. ![plot3](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_median_household_income_bucket.png)
 
 ### Models
 
