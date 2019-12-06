@@ -118,6 +118,26 @@ Now observe the Lasso model which controls for median household income, this tim
 
 ### Reflection
 
+- Median household income dominates zip, latitude, and longitude in the regression model
+- Would we want to classify food establishments as likely to fail based on median household income?  (**No**)
+- Can other variables be included, from census data or otherwise, to identify factors that contribute to failing inspections in an effort to:
+  - Increase precision and recall
+  - **Ensure that aspects related to food safety and the quality of the food preparation environment are driving predictions**
+
+This final sub-bullet is of greatest importance in my mind.  While demographic information could be useful for identifying areas with more failures, modeling on those features does not get at the cause of failing food inspections, though knowing that certain types of facilities, i.e. those that serve alcohol as indicated in my results, are more likely to fail inspections, does provide a uesful insight, and city and business owners should understand that not all food establishments share the same observed risk of failing inspections.
+
 ### References
 
-Fill out...
+- Modeling techniques and ideas come from: Hastie, Trevor, Tibshirani, Robert and Friedman, Jerome. The Elements of Statistical Learning. New York, NY, USA: Springer New York Inc., 2001.
+
+- The problem of identifying establishments likely to fail inspections has been addressed in part by the city of Chicago, using the data they have collected and made available.  Their approach focuses primarily on predicting establishments likely to fail inspections as a way of triaging which establishments need attention.  Their research is located here: https://github.com/Chicago/food-inspections-evaluation.
+
+- Blogposts have covered the way the city of Chicago breaks up food establishments by risk of foodborne illness according to the type of food they serve and the way they serve it.  This blogpost details the way in which inspectors visit high-risk establishments more often than low-risk ones: http://redlineproject.org/foodinspections.php.  This blogpost has informed my thinking about the problem at hand.
+
+- Though I found this dataset on HealthData.gov, some Chicago food inspection data has been made available on Kaggle with limited engagement from Kagglers: https://www.kaggle.com/chicago/chicago-food-inspections.  
+
+- GitHub user trupti-jadhav has also analyzed this data here: https://github.com/trupti-jadhav/Food-Inspection-in-City-of-Chicago-Python/blob/master/FOOD_INSPECTION_FINAL.ipynb.  I did not use code from his analysis but did review his notebook.
+
+**Odds Ratio Definition**
+- Ratio of the odds of being exposed as a case to the odds of being exposed as a control
+- OR = (exposed cases / unexposed cases) / (exposed controls / unexposed controls)
