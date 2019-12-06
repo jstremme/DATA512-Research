@@ -79,11 +79,21 @@ Using the US Census API, I collect median household income for each zip code in 
 
 ![plot3](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/failure_rates_by_median_household_income_bucket.png)
 
-I also examine the median household income distribution by inspection results.
+I also examine the median household income distribution by inspection result.
 
 ![plot4](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/median_household_income_by_failure_rate.png)
 
 ### Models
+
+There are a variety of reasons why building a classifier to predict inspection failures could be useful, including the purpose of triaging which food establishments to which inspectors should pay attention.  Additionally, by predicting failures with a model, we are able to analyze the features that most contribute to high a liklihood of failing an inspection and examine their effects relative to other features.  I constructed both a Lasso Logistic Regression model and an XGBoost model using grid search for hyperparameters in addition to a KNN model not shown.  The response rate is ~22% for failing inspections and the models achieve ~78% accuracy.  Precision (actual failures out of predicted failures) and recall (rate of failures captured) are a bit more informative for the problem of triaging which establishments to inspect, because with high precision, we could presumably flag the highest-risk establishments on which to focus without wasting the time of inspectors or establishment owners with false positives.  
+
+**Lasso Logistic Regression Precision and Recall**
+
+![plot5](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/grid_model_performance/full_lasso_pr.png)
+
+**XGBoost Precision and Recall**
+
+![plot6](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/grid_model_performance/xgb_pr.png)
 
 ### Analysis of Variables Associated with Failing Food Inspections
 
