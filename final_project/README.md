@@ -97,6 +97,17 @@ There are a variety of reasons why building a classifier to predict inspection f
 
 ### Analysis of Variables Associated with Failing Food Inspections
 
+Because the Lasso model encourages sparsity of featurs and is more interpretable than XGBoost with similar performance, I conduct an analysis of predictive features from the Lasso model, first without median household income included.  First note median household income by zip to compare to the predictors in the plot to follow.  It is clear that the zip features that show as protective in the model are among the wealthiest areas in Chicago by median household income group.
+
+![plot7](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/median_household_income_by_zip.png)
+
+Now note the top predictors from the lasso model without median hosehold income included:
+  - Only top predictors from full Lasso model shown: abs(coefficient) > 0.5
+  - PR AUC is about the same as with median household income included: delta < 0.01
+  - **Protective zip code predictors are among the highest by median household income**
+
+![plot8](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/full_lasso_features/full_lasso_features_no_median_household_income.png)
+
 ### Reflection
 
 ### References
