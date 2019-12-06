@@ -2,6 +2,9 @@
 
 This directory of the DATA512-Research repository contains my final project for DATA512 at University of Washington.  The notebooks are written in a literate style and the data is supplied in the `data` directory with the intention of making my analysis reproducible.  This research was conducted according to [the project plan detailed here](https://github.com/jstremme/DATA512-Research/blob/master/a5/project_plan.md), which I highly reocmmend reviewing for an understanding of the research questions, hypotheses, and methods considered in this analysis.
 
+# Final Report
+This `README.md` file serves as my final report, though the notebooks provide additional details of my analysis.
+
 ### Project Overview
 
 As a Seattle resident, I am always intrigued by the signs outside of restaurants that indicate a restaurant's health safety rating. Not all cities have this, but certainly it is important information for consumers. It can also have a big impact on business owners, particularly if they fail a food inspection. The city of Chicago has a large dataset of food inspections on HealthData.gov that provides the opportunity to understand the rates at which food establishments of various types pass or fail food inspections, and what other attributes of these establishments are associated with passing or failing. This research has been conducted in a reproducable fashion, such that these same methods could be applied to analyze food inspections in other cities.
