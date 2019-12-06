@@ -101,12 +101,20 @@ Because the Lasso model encourages sparsity of featurs and is more interpretable
 
 ![plot7](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/eda/median_household_income_by_zip.png)
 
-Now note the top predictors from the lasso model without median hosehold income included:
-  - Only top predictors from full Lasso model shown: abs(coefficient) > 0.5
-  - PR AUC is about the same as with median household income included: delta < 0.01
-  - **Protective zip code predictors are among the highest by median household income**
+Now note the top predictors from the Lasso model without median hosehold income included:
+- Only top predictors from full Lasso model shown in plot: abs(coefficient) > 0.5 (but all others were included in the model)
+- PR AUC is about the same as with median household income included: delta < 0.01
+- **Protective zip code predictors are among the highest by median household income**
 
 ![plot8](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/full_lasso_features/full_lasso_features_no_median_household_income.png)
+
+Now observe the Lasso model which controls for median household income, this time:
+- Only **top predictors**: abs(coefficient) > 0.5 from full Lasso model included in new Logistic Regression model with no penalization
+- All features statistically significant with **p < 0.001**
+- 0.322 PR AUC vs 3.87 because we have eliminated some of the less important features which still did explain some of the variance
+- **With household income included, zip features are no longer among the most predictive and do not show as protective**
+
+![plot9](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/lasso_reduced_logit_features_no_penalty/reduced_logit_sklearn_features_no_penalty.png)
 
 ### Reflection
 
