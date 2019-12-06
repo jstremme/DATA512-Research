@@ -7,22 +7,22 @@ This `README.md` file serves as my final report, though the notebooks provide ad
 
 ### Project Overview
 
-As a Seattle resident, I am always intrigued by the signs outside of restaurants that indicate a restaurant's health safety rating. Not all cities have this, but certainly it is important information for consumers. It can also have a big impact on business owners, particularly if they fail a food inspection. The city of Chicago has a large dataset of food inspections on HealthData.gov that provides the opportunity to understand the rates at which food establishments of various types pass or fail food inspections, and what other attributes of these establishments are associated with passing or failing. This research has been conducted in a reproducable fashion, such that these same methods could be applied to analyze food inspections in other cities.
+As a Seattle resident, I am always intrigued by the signs outside of restaurants that indicate a restaurant's health safety rating. Not all cities have this, but certainly it is important information for consumers. It can also have a big impact on business owners, particularly if they fail a food inspection. The city of Chicago has a large dataset of food inspections on https://healthdata.gov/ that provides the opportunity to understand the rates at which food establishments of various types pass or fail food inspections, and what other attributes of these establishments are associated with passing or failing. This research has been conducted in a reproducable fashion, such that these same methods could be applied to analyze food inspections in other cities.
 
 ### Questions and Hypothesis
 
 This research aims to address two questions and test the assumptions of one hypothesis:
 
-Questions:
+**Questions**
 
 - Which types of food establishments (i.e. restaurants, bars, cafes, school cafeterias) are most likely to fail food inspections in the city of Chicago?
 - Which neighborhoods in Chicago are most likely to fail food inspections?
 
-Hypothesis:
+**Hypothesis**
 
 - The neighborhoods in Chicago most likely to fail food inspections are also relatively impoverished compared to those likely to pass inspections.
 
-These research questions are aimed at building an understanding of factors that may contribute to establishments failing an inspection, while the hypothesis represents an assumption on my part as the researcher.   I am interested in addressing this assumption to better understand whether or not geographical features are predictive precisely because they stand in for economic features missing from the dataset, or if, perhaps, there are other factors that drive inspection failure rates.  It might also be the case that failures occur uniformly across neighborhoods.
+These research questions are aimed at building an understanding of factors that may contribute to establishments failing an inspection, while the hypothesis represents an assumption on my part as the researcher.  I am interested in addressing this assumption to better understand whether or not geographical features are predictive precisely because they stand in for economic features missing from the dataset, or if, perhaps, there are other factors that drive inspection failure rates.  It might also be the case that failures occur uniformly across neighborhoods.
 
 ## Programming Resources Used
 This analysis was prepared using Python 3.7 running in a Jupyter Notebook environment on my 2016 MacBook Pro with a 2.7 GHz Intel Core i7 processor and 16 GB 2133 MHz LPDDR3 memory.  
@@ -45,6 +45,15 @@ Chicago Food Inspections data from HealthData.gov: https://healthdata.gov/datase
 **Disclaimers**
 - As required by census.gov: "This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau."
 - The `data` directory includes data licensed under the [odbl license](http://opendefinition.org/licenses/odc-odbl/) and that license is reproduced in `LICENSE.txt` in accordance with the requirements of the odbl license.
+
+**Example Records**
+| Inspection ID | DBA Name             | AKA Name             | License # | Facility Type        | Risk            | Address              | City    | State | Zip     | Inspection Date | Inspection Type       | Results         | Violations                                                                                                                                                                                                                              | Latitude           | Longitude    | Location                                 |
+|---------------|----------------------|----------------------|-----------|----------------------|-----------------|----------------------|---------|-------|---------|-----------------|-----------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|--------------|------------------------------------------|
+| 2320831       | OGDEN PLAZA INC.     | OGDEN PLAZA INC.     | 2475982.0 | Grocery Store        | Risk 3 (Low)    | 3459 W OGDEN AVE     | CHICAGO | IL    | 60623.0 | 10/31/19        | Canvass               | Out of Business |                                                                                                                                                                                                                                         | 41.85526591        | -87.71240156 | (-87.71240156240032, 41.85526590922669)  |
+| 2320793       | TACO MARIO'S LIMITED | TACO MARIO'S LIMITED | 2622418.0 | Mobile Food Preparer | Risk 2 (Medium) | 2300 S THROOP ST     | CHICAGO | IL    | 60608.0 | 10/30/19        | License               | Pass            |                                                                                                                                                                                                                                         | 41.85045102        | -87.65879786 | (-87.65879785567869, 41.85045102427)     |
+| 2320830       | THE HOXTON, CHICAGO  | THE HOXTON, CHICAGO  | 2694640.0 | Restaurant           | Risk 2 (Medium) | 200 N GREEN ST       | CHICAGO | IL    | 60607.0 | 10/31/19        | License               | Pass            | 36. THERMOMETERS PROVIDED & ACCURATE - Comments: MUST PROVIDE THERMOMETERS IN ALL REFRIGERATION UNITS AND MAINTAIN.                                                                                                                     | 41.885699200000005 | -87.64878909 | (-87.64878908937915, 41.885699197163355) |
+| 2320717       | ROCKS LAKEVIEW       | ROCKS LAKEVIEW       | 2304161.0 | Restaurant           | Risk 1 (High)   | 3463-3467 N BROADWAY | CHICAGO | IL    | 60657.0 | 10/29/19        | Canvass Re-Inspection | Pass            | 47. FOOD & NON-FOOD CONTACT SURFACES CLEANABLE, PROPERLY DESIGNED, CONSTRUCTED & USED - Comments: NOTED TORN RUBBER GASKET INSIDE THE PREP SERVICE COOLER AT THE KITCHEN PREP. INSTRUCTED TO DETAIL REPAIR AND MAINTAIN AND/OR REPLACE. | 41.94497417        | -87.64565976 | (-87.64565975587642, 41.94497417145062)  |
+| 2320618       | A BEAUTIFUL RIND     | A BEAUTIFUL RIND     | 2670347.0 |                      | Risk 1 (High)   | 2211 N MILWAUKEE AVE | CHICAGO | IL    | 60647.0 | 10/28/19        | License               | Not Ready       |                                                                                                                                                                                                                                         | 41.92107616        | -87.69413786 | (-87.69413785909323, 41.921076157561416) |
 
 ### Summary Plots and Visualizations
 
