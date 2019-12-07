@@ -3,6 +3,7 @@
 This directory of the DATA512-Research repository contains my final project for DATA512 at University of Washington.  The notebooks are written in a literate style and the data is supplied in the `data` directory with the intention of making my analysis reproducible.  This research was conducted according to [the project plan detailed here](https://github.com/jstremme/DATA512-Research/blob/master/a5/project_plan.md).
 
 # Final Report
+
 This `README.md` file serves as my final report, though the notebooks provide additional details of my analysis.
 
 ### Project Overview
@@ -25,6 +26,7 @@ This research aims to address two questions and test the assumptions of one hypo
 These research questions are aimed at building an understanding of factors that may contribute to establishments failing an inspection, while the hypothesis represents an assumption on my part as the researcher.  I am interested in addressing this assumption to better understand whether or not geographical features are predictive precisely because they stand in for economic features missing from the dataset, or if, perhaps, there are other factors that drive inspection failure rates.  It might also be the case that failures occur uniformly across neighborhoods.
 
 ## Programming Resources Used
+
 This analysis was prepared:
 - Using Python 3.7
 - Running in a Jupyter Notebook environment
