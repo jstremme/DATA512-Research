@@ -133,7 +133,7 @@ Now observe the model which controls for median household income, where this tim
   - Increase precision and recall
   - **Ensure that aspects related to food safety and the quality of the food preparation environment are driving predictions**
 
-This final sub-bullet is of greatest importance in my mind.  While demographic information could be useful for identifying areas with more failures, modeling on those features does not get at the cause of failing food inspections, though knowing that certain types of facilities, i.e. those that serve alcohol as indicated in my results, are more likely to fail inspections, does provide a uesful insight, and city and business owners should understand that not all food establishments share the same observed risk of failing inspections.
+This final sub-bullet is of greatest importance in my mind.  While demographic information could be useful for identifying areas with more failures, modeling on these features does not get at the cause of failing food inspections.  That said, knowing certain types of facilities, i.e. those that serve alcohol, are more likely to fail inspections, does provide a uesful insight, and city and business owners should understand that not all food establishments share the same observed risk of failing inspections.
 
 ### References
 
