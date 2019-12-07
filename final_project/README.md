@@ -137,6 +137,17 @@ Now observe the model which controls for median household income, where this tim
 
 This final sub-bullet is of greatest importance in my mind.  While demographic information could be useful for identifying areas with more failures, modeling on these features does not get at the cause of failing food inspections.  That said, knowing certain types of facilities, i.e. those that serve alcohol, are more likely to fail inspections, does provide a uesful insight, and city and business owners should understand that not all food establishments share the same observed risk of failing inspections.
 
+### Human-Centered Data Science Principles and Considerations
+
+In my analysis, I have made an effort to address a variety of human-cenetered data science considerations including:
+- Appropriately citing sources of data, tools, and inspiration
+- Following a literate programming style to explain decisions made along the way that impact the final results of my analysis
+- Making my research reproducible by providing information about my environment, how I used the census API, and where I received my data in addition to including my data in my repository so that anyone could run my notebooks to replicate my results.
+- Considering the imapct to business owners, consumers, and inspectors of food establishments
+- **Considering the way in which all models are a simplification of reality and necessarily leave out important variables**
+
+This final bullet has been a key theme of my analysis, in particular by demonstrating the way that median household income group explains  much of the same variation in the model as zip code, and perhaps more directly.  That said, zip code certainly contains information that median household group does not, and there are necessarily other features that would provide a more robust analysis of factors associated with failing food inspections.  By creating a model at all, we simplify reality and introduce bias.  I have attempted to model this problem in a way that adds information, detail, and understanding to the drivers associated with failing food inspections in the city of Chicago, but with the caveat that there are aspects of my analysis and model that still need to be addresses. 
+
 ### References
 
 - Modeling techniques and ideas come from: Hastie, Trevor, Tibshirani, Robert and Friedman, Jerome. The Elements of Statistical Learning. New York, NY, USA: Springer New York Inc., 2001.
