@@ -1,3 +1,7 @@
+The Code in this repository is licensed under the MIT LICENSE.txt
+in the DATA512-Research directory with this license covering the 
+data made available here.
+
 ## ODC Open Database License (ODbL)
 
 ### Preamble
