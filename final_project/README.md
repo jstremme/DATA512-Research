@@ -25,7 +25,13 @@ This research aims to address two questions and test the assumptions of one hypo
 These research questions are aimed at building an understanding of factors that may contribute to establishments failing an inspection, while the hypothesis represents an assumption on my part as the researcher.  I am interested in addressing this assumption to better understand whether or not geographical features are predictive precisely because they stand in for economic features missing from the dataset, or if, perhaps, there are other factors that drive inspection failure rates.  It might also be the case that failures occur uniformly across neighborhoods.
 
 ## Programming Resources Used
-This analysis was prepared using Python 3.7 running in a Jupyter Notebook environment on my 2016 MacBook Pro with a 2.7 GHz Intel Core i7 processor and 16 GB 2133 MHz LPDDR3 memory.  
+This analysis was prepared:
+- Using Python 3.7
+- Running in a Jupyter Notebook environment
+- On my 2016 MacBook Pro with:
+  - a 2.7 GHz Intel Core i7 processor
+  - 16 GB 2133 MHz LPDDR3 memory
+  
 Documentation for Python can be found here: https://docs.python.org/3.7/  
 Documentation for Jupyter Notebook can be found here: http://jupyter-notebook.readthedocs.io/en/latest/  
 
