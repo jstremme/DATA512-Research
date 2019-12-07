@@ -117,7 +117,7 @@ Because the Lasso model encourages sparsity of featurs and is more interpretable
 Now note the top predictors from the Lasso model without median hosehold income where:
 - Only top predictors from the full Lasso model are shown: abs(coefficient) > 0.5 (all others present in the model but not plotted)
 - PR AUC is about the same as with median household income included: delta < 0.01
-- **Protective zip code predictors are among the highest neighborhoods by median household income**
+- **Protective zip code predictors are among the wealthiest neighborhoods by median household income**
 
 ![plot8](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/full_lasso_features/full_lasso_features_no_median_household_income.png)
 
