@@ -141,7 +141,7 @@ This final sub-bullet is of greatest importance in my mind.  While demographic i
 
 - The problem of identifying establishments likely to fail inspections has been addressed in part by the city of Chicago, using the data they have collected and made available.  Their approach focuses primarily on predicting establishments likely to fail inspections as a way of triaging which establishments need attention.  Their research is located here: https://github.com/Chicago/food-inspections-evaluation.
 
-- Blogposts have covered the way the city of Chicago breaks up food establishments by risk of foodborne illness according to the type of food they serve and the way they serve it.  This blogpost details the way in which inspectors visit high-risk establishments more often than low-risk ones: http://redlineproject.org/foodinspections.php.  This blogpost has informed my thinking about the problem at hand.
+- Blogposts have covered the way the city of Chicago breaks up food establishments by risk of foodborne illness according to the type of food they serve and the way they serve it.  This blogpost details the way in which inspectors visit high-risk establishments more often than low-risk ones and has informed my thinking about the problem at hand: http://redlineproject.org/foodinspections.php.
 
 - Though I found this dataset on HealthData.gov, some Chicago food inspection data has been made available on Kaggle with limited engagement from Kagglers: https://www.kaggle.com/chicago/chicago-food-inspections.  
 
