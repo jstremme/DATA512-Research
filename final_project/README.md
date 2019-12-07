@@ -117,7 +117,7 @@ Now note the top predictors from the Lasso model without median hosehold income 
 
 ![plot8](https://github.com/jstremme/DATA512-Research/blob/master/final_project/images/full_lasso_features/full_lasso_features_no_median_household_income.png)
 
-Now observe the Lasso model which controls for median household income, where this time:
+Now observe the model which controls for median household income, where this time:
 - Only **top predictors**: abs(coefficient) > 0.5 from the full Lasso model are included in this new Logistic Regression model with no penalization
 - All features are statistically significant with **p < 0.001**
 - The model achieves 0.322 PR AUC vs 3.87 because we have eliminated some of the less important features which explained some of the variance but not the majority
