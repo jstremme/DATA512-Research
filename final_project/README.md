@@ -32,8 +32,7 @@ This analysis was prepared:
   - a 2.7 GHz Intel Core i7 processor
   - 16 GB 2133 MHz LPDDR3 memory
   
-Documentation for Python can be found here: https://docs.python.org/3.7/  
-Documentation for Jupyter Notebook can be found here: http://jupyter-notebook.readthedocs.io/en/latest/  
+Documentation for Python can be found here: https://docs.python.org/3.7/ and documentation for Jupyter Notebook can be found here: http://jupyter-notebook.readthedocs.io/en/latest/.
 
 The following Python packages were used:
 - pandas 0.24.2
